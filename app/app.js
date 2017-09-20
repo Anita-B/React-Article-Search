@@ -1,6 +1,8 @@
 // Include the Main React Dependencies
-var React = require("react");
-var ReactDOM = require("react-dom");
+// var React = require("react");
+// var ReactDOM = require("react-dom");
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Grabs the Routes
 var routes = require("./config/routes");

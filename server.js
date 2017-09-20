@@ -48,10 +48,6 @@ db.once("open", function() {
 });
 
 
-// Routes
-// =============================================================
-require("./app/config/routes.js")(app);
-
 
 // Should this be in routes?
 // ====================================================

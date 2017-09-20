@@ -1,0 +1,53 @@
+body {
+	background-image: url('../images/bg_1048-1003.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height:100%;
+}
+
+.jumbotron {
+	background-color: rgba(255, 255, 255, 0);
+	padding: 20px 0;
+	border-radius: 0;
+}
+.btn-save {
+	float: right;
+}
+.date {
+	margin-left: 25px;
+	color: #858585;
+}
+.panel-notes {
+	margin: 20px 0 10px 0;
+	border: none;
+	box-shadow: none;
+}
+.panel, .form-control, .btn {
+	border-radius: 0;
+}
+.panel-heading {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.panel-success {
+	border-color: #512ca8;
+}
+.panel-success>.panel-heading {
+    color: #512ca8;
+    background-color: rgba(81, 44, 168, .2);
+    border-color: #512ca8;
+}
+.btn-success {
+    color: #fff;
+    background-color: #512ca8;
+    border-color: #512ca8;
+}
+.btn-success:hover {
+    color: #fff;
+    background-color: rgba(81, 44, 168, .6);
+    border-color: rgba(81, 44, 168, .6);
+}
