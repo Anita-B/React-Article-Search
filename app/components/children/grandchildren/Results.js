@@ -62,28 +62,28 @@ var Results = React.createClass({
 						<div className="panel panel-default">
 						    <div className="panel-body">
 						       {articles[1].headline.main}
-						       <a onClick={() => this.handleSave(articles[1].headline.main)} className="btn btn-success btn-sm btn-save">Save</a>
+						       <a value={articles[1].headline.main} onClick={() => this.handleSave(articles[1].headline.main, articles[1].web_url, articles[1].pub_date)} className="btn btn-success btn-sm btn-save">Save</a>
 						    </div>
 						</div>
 
 			          	<div className="panel panel-default">
 						    <div className="panel-body">
 						       {articles[2].headline.main}
-						       <a onClick={() => this.handleSave(articles[2].headline.main)} className="btn btn-success btn-sm btn-save">Save</a>
+						       <a value={articles[2].headline.main} onClick={() => this.handleSave(articles[2].headline.main, articles[2].web_url, articles[2].pub_date)} className="btn btn-success btn-sm btn-save">Save</a>
 						    </div>
 						</div>
 
 						<div className="panel panel-default">
 						    <div className="panel-body">
 						       {articles[3].headline.main}
-						       <a onClick={() => this.handleSave(articles[3].headline.main)} className="btn btn-success btn-sm btn-save">Save</a>
+						       <a value={articles[3].headline.main} onClick={() => this.handleSave(articles[3].headline.main, articles[3].web_url, articles[3].pub_date)} className="btn btn-success btn-sm btn-save">Save</a>
 						    </div>
 						</div>
 
 						<div className="panel panel-default">
 						    <div className="panel-body">
 						       {articles[4].headline.main}
-						       <a onClick={() => this.handleSave(articles[4].headline.main)} className="btn btn-success btn-sm btn-save">Save</a>
+						       <a value={articles[4].headline.main} onClick={() => this.handleSave(articles[4].headline.main, articles[4].web_url, articles[4].pub_date)} className="btn btn-success btn-sm btn-save">Save</a>
 						    </div>
 						</div>
 
