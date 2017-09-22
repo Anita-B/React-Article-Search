@@ -6,12 +6,14 @@ var Results = require("./grandchildren/Results");
 // Helper for making AJAX requests to our API
 var helpers = require("../utils/helpers");
 
+var axios = require("axios");
+
 // Create the Child Component
 var Search = React.createClass({
 
   // Here we set a generic state associated with the articles being searched for
   getInitialState: function() {
-    return { topic: "", startYear: 0, endYear: 0, results: [] };
+    return { topic: "", startYear: 0, endYear: 0, results: [], savedArticle: "" };
   },
 
   componentDidUpdate: function() {
@@ -68,17 +70,36 @@ var Search = React.createClass({
     event.preventDefault();
 
     // Set the parent to have the search topic
-    this.props.setSearch(this.state.topic, this.state.startYear, this.state.endYear);
-    this.setState({ topic: "", startYear: 0, endYear: 0 });
+    //this.props.setSearch(this.state.topic, this.state.startYear, this.state.endYear);
+    //this.setState({ topic: "", startYear: 0, endYear: 0 });
 
-    helpers.runQuery(this.state.topic, this.state.startYear, this.state.endYear).then(function(data) {
-      if (data !== this.state.results) {
-        console.log("NYTIMES data: ", data);
-        this.setState({ results: data });
-        }
-      }.bind(this));
+    // helpers.runQuery(this.state.topic, this.state.startYear, this.state.endYear).then(function(data) {
+    //   if (data !== this.state.results) {
+    //     console.log("NYTIMES data: ", data);
+    //     this.setState({ results: data });
+    //     }
+    //   }.bind(this));
+    // New York Times API
+    var authKey = "55ce213092e844789c686de9515f0132";
+    // Figure out the geolocation
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + authKey + "&q=" + this.state.topic;
+
+    axios.get(queryURL).then( nytdata => {
+
+      const docs = nytdata.data.response.docs;
+
+      //console.log(docs);
+
+      this.setState({ topic: "", startYear: 0, endYear: 0, results: docs });
+
+    });
 
   },
+
+  // This function allows childrens to update the parent.
+  // setTitle: function(title) {
+  //   this.props.setState({ savedArticle: title });
+  // },
 
   // Here we describe this component's render method
   render: function() {
@@ -120,7 +141,7 @@ var Search = React.createClass({
             </div>
           </div> 
 
-          <Results results={this.state.results}/>
+          <Results results={this.state.results} setArticle={this.props.setArticle} />
 
       </div>         
 
